@@ -1,0 +1,51 @@
+﻿<Window x:Class="BatteryIcon.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BatteryIcon"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid Margin="7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <StackPanel HorizontalAlignment="Left"
+                        Orientation="Horizontal">     
+                
+                <ComboBox x:Name="ComboBox_Processes"
+                          MinWidth="125">                    
+                </ComboBox>
+                
+                <Button x:Name="Button_SelectProcess"
+                        Padding="5"
+                        Margin="5,0,5,0"
+                        Content="Выбрать" 
+                        Click="Button_SelectProcess_Click">                    
+                </Button>
+
+                <Image x:Name="IconImage" 
+                       Width="200" 
+                       Height="200"
+                       RenderOptions.BitmapScalingMode="NearestNeighbor"
+                       Stretch="Uniform">                    
+                </Image>
+
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Button x:Name="Test"
+                    Content="Text" Click="Test_Click">                
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            
+        </Grid>
+    </Grid>
+</Window>
