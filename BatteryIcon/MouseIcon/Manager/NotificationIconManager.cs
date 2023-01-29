@@ -34,7 +34,7 @@ namespace BatteryIcon.MouseIcon.Manager
 
             var mouseBattery = Mouse.Statuses.Battery;
             var mouseBatteryPercent = Mouse.Statuses.BatteryPercent;
-            string text = String.Format("{0}% ({1}) заряда в мышке", mouseBatteryPercent, mouseBattery);
+            string text = String.Format("{0}% ({1}) charge in mouse", mouseBatteryPercent, mouseBattery);
             NotificationIcon.Text = text;
         }
 
@@ -59,9 +59,9 @@ namespace BatteryIcon.MouseIcon.Manager
         {
             ContextMenuStrip contextMenuStrip = new();
 
-            contextMenuStrip.Items.Add("Перезапустить", null, NotifyIcon_ClearPointersClick);
+            contextMenuStrip.Items.Add("Clear values", null, NotifyIcon_ClearPointersClick);
             contextMenuStrip.Items.Add(new ToolStripSeparator());
-            contextMenuStrip.Items.Add("Выход", null, NotifyIcon_ExitClick);
+            contextMenuStrip.Items.Add("Exit", null, NotifyIcon_ExitClick);
 
             return contextMenuStrip;
         }
