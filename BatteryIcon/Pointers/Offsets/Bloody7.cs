@@ -24,7 +24,7 @@
             Flag_TransmissionBoost = 0x00F9732B,
 
             Signal = 0x00A1E87C,
-            Charging = 0x00A1CD24,
+            Charging = 0x00F97C08,
 
             Battery = 0x00DE5024,
             BatteryPercent = 0x00F97C08,
@@ -37,7 +37,7 @@
         internal enum Offsets0
         {
             Signal = 0x00000F7E,
-            Charging = 0x00000C3C,
+            Charging = 0x0000043C,
 
             Battery = 0x0000859C,
             BatteryPercent = 0x00000528,
