@@ -14,7 +14,7 @@ namespace BatteryIcon
     {
         private readonly NotificationIconManager _notificationIconManager = new();
         private Bloody7Reader? _pointerReader;
-        private readonly object _timer_locker = new();
+        private static readonly object _timer_locker = new();
         private readonly Timer timer = new()
         {
             AutoReset = true,
