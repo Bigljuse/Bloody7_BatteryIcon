@@ -1,4 +1,4 @@
-﻿using BatteryIcon.Pointers.Offsets;
+﻿using BatteryIcon.Pointers.Offsets.V2022_1129;
 using Binarysharp.MSharp;
 using System;
 using System.Diagnostics;
@@ -42,7 +42,7 @@ namespace BatteryIcon.Pointers
 
         private void Read_Charging()
         {
-            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAdresses.Charging, (int)Bloody7.Offsets0.Charging);
+            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAddresses.Charging, (int)Bloody7.Offsets0.Charging);
 
             if (value == 1)
                 Mouse.Statuses.IsCharging = true;
@@ -52,7 +52,7 @@ namespace BatteryIcon.Pointers
 
         private void Read_Connection()
         {
-            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAdresses.Connection);
+            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAddresses.Connection);
 
             if (value == 1)
                 Mouse.Statuses.IsConnected = true;
@@ -62,77 +62,77 @@ namespace BatteryIcon.Pointers
 
         private void Read_Battery()
         {
-            ushort value = ReadPointerValue<ushort>((int)Bloody7.StaticAdresses.Battery, (int)Bloody7.Offsets0.Battery);
+            ushort value = ReadPointerValue<ushort>((int)Bloody7.StaticAddresses.Battery, (int)Bloody7.Offsets0.Battery);
 
             Mouse.Statuses.Battery = value;
         }
 
         private void Read_BatteryPercent()
         {
-            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAdresses.BatteryPercent, (int)Bloody7.Offsets0.BatteryPercent);
+            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAddresses.BatteryPercent, (int)Bloody7.Offsets0.BatteryPercent);
 
             Mouse.Statuses.BatteryPercent = value;
         }
 
         private void Read_LowBattery()
         {
-            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAdresses.LowBattery, (int)Bloody7.Offsets0.LowBattery);
+            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAddresses.LowBattery, (int)Bloody7.Offsets0.LowBattery);
 
             Mouse.Statuses.LowBattery = value;
         }
 
         private void Read_Signal()
         {
-            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAdresses.Signal, (int)Bloody7.Offsets0.Signal);
+            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAddresses.Signal, (int)Bloody7.Offsets0.Signal);
 
             Mouse.Statuses.Signal = value;
         }
 
         private void Read_SleepTimeOut()
         {
-            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAdresses.SleepTimeOut);
+            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAddresses.SleepTimeOut);
 
             Mouse.Statuses.SleepTimeOut = value;
         }
 
         private void Read_Channel()
         {
-            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAdresses.Channel);
+            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAddresses.Channel);
 
             Mouse.Statuses.Channel = value;
         }
 
         private void Read_WakeUpState()
         {
-            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAdresses.WakeUpState);
+            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAddresses.WakeUpState);
 
             Mouse.Statuses.WakeUpState = value;
         }
 
         private void Read_LightBrightness()
         {
-            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAdresses.LightBrightness);
+            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAddresses.LightBrightness);
 
             Mouse.Statuses.LightBrightness = value;
         }
 
         private void Read_CurrentMouseID()
         {
-            uint value = ReadPointerValue<uint>((int)Bloody7.StaticAdresses.CurrentMouseID);
+            uint value = ReadPointerValue<uint>((int)Bloody7.StaticAddresses.CurrentMouseID);
 
             Mouse.Statuses.CurrentMouseID = value;
         }
 
         private void Read_LastMouseID()
         {
-            uint value = ReadPointerValue<uint>((int)Bloody7.StaticAdresses.LastMouseID);
+            uint value = ReadPointerValue<uint>((int)Bloody7.StaticAddresses.LastMouseID);
 
             Mouse.Statuses.LastMouseID = value;
         }
 
         private void Read_Flag_RFSynchronize()
         {
-            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAdresses.Flag_RFSynchronize);
+            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAddresses.Flag_RFSynchronize);
 
             if (value == 1)
                 Mouse.Statuses.Flag_RFSynchronize = true;
@@ -142,7 +142,7 @@ namespace BatteryIcon.Pointers
 
         private void Read_Flag_ZeroFrequencyOffset()
         {
-            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAdresses.Flag_ZeroFrequencyOffset);
+            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAddresses.Flag_ZeroFrequencyOffset);
 
             if (value == 1)
                 Mouse.Statuses.Flag_ZeroFrequencyOffset = true;
@@ -152,7 +152,7 @@ namespace BatteryIcon.Pointers
 
         private void Read_Flag_ExclusiveChanel()
         {
-            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAdresses.Flag_ExclusiveChanel);
+            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAddresses.Flag_ExclusiveChanel);
 
             if (value == 1)
                 Mouse.Statuses.Flag_ExclusiveChanel = true;
@@ -162,7 +162,7 @@ namespace BatteryIcon.Pointers
 
         private void Read_Flag_RFSignalDetector()
         {
-            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAdresses.Flag_RFSignalDetector);
+            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAddresses.Flag_RFSignalDetector);
 
             if (value == 1)
                 Mouse.Statuses.Flag_RFSignalDetector = true;
@@ -172,7 +172,7 @@ namespace BatteryIcon.Pointers
 
         private void Read_Flag_TransmissionBoost()
         {
-            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAdresses.Flag_TransmissionBoost);
+            byte value = ReadPointerValue<byte>((int)Bloody7.StaticAddresses.Flag_TransmissionBoost);
 
             if (value == 1)
                 Mouse.Statuses.Flag_TransmissionBoost = true;

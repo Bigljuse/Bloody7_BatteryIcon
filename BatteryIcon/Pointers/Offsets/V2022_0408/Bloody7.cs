@@ -1,4 +1,4 @@
-﻿namespace BatteryIcon.Pointers.Offsets
+﻿namespace BatteryIcon.Pointers.Offsets.V2022_0408
 {
     internal static class Bloody7
     {
@@ -7,7 +7,7 @@
         /// <summary>
         /// Ready to read, relative to bloody7.exe main module base address
         /// </summary>
-        internal enum StaticAdresses
+        internal enum StaticAddresses
         {
             Connection = 0x00F96110,
             SleepTimeOut = 0x00F9732E,
@@ -32,7 +32,7 @@
         }
 
         /// <summary>
-        /// Offsets relative to static adresses
+        /// Offsets relative to static addresses
         /// </summary>
         internal enum Offsets0
         {
