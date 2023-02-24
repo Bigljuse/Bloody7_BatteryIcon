@@ -1,4 +1,4 @@
-#### Supported Version: V2022.0408
+#### Supported Version: V2022.1129
 ## Battery icon
 This is a small pet progect for educational purposes and can be used by anybody.
 
