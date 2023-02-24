@@ -26,8 +26,8 @@
             Signal = 0x00611068, // Checked
             Charging = 0x00103F3A0, // Checked
 
-            Battery = 0x00611068, // Checked
-            BatteryPercent = 0x00611068, // Checked
+            Battery = 0x00E7B4F4, // Checked
+            BatteryPercent = 0x00E7B4F4, // Checked
             LowBattery = 0x0103EACE, // Checked
         }
 
@@ -39,8 +39,8 @@
             Signal = 0x00000CD4, // Checked
             Charging = 0x0000043C, // Checked
 
-            Battery = 0x00000BFC, // Checked
-            BatteryPercent = 0x00000BFD, // Checked
+            Battery = 0x0000859C, // Checked
+            BatteryPercent = 0x000085F8, // Checked
             LowBattery = 0x00000000, // Checked
         }
     }
