@@ -33,8 +33,6 @@ namespace BatteryIcon.Processes
                     continue;
 
                 s_Process = process;
-                Settings.Default.LastProcessName = processName;
-                Settings.Default.LastBaseAddress = process.MainModule.BaseAddress.ToInt32();
 
                 return process;
             }
