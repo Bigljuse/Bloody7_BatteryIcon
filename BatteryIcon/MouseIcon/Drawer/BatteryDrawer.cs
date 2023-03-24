@@ -20,17 +20,17 @@ namespace BatteryIcon.MouseIcon.Drawer
             _bitmap = CreateBitmap((byte)batterySize, (byte)batterySize);
         }
 
-        public Bitmap GetBitmap(byte BatteryCharge)
+        public Bitmap GetBitmap(byte BatteryCharge, Color IconColor)
         {
             byte backGroundSize = (byte)(BatterySize.Bitmap_16x16 - 1);
 
             DrawRectangle(new Point(0, 0), new Point(backGroundSize, backGroundSize), Color.Transparent);
-            DrawBattery(Color.White);
+            DrawBattery(IconColor);
             DrawProgressBar(BatteryCharge, GetProgressBarColor(BatteryCharge));
             //DrawBatteryChargeNumbers(bitmap, BattaryCharge, Color.White);
 
             if (Mouse.Statuses.IsCharging == true)
-                DrawChargingWire(new Point(0, 2), Color.White);
+                DrawChargingWire(new Point(0, 2), IconColor);
 
             return _bitmap;
         }
