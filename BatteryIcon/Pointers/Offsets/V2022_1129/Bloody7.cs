@@ -2,7 +2,7 @@
 {
     internal static class Bloody7
     {
-        // Bloody7 Version 2022.0408
+        // Bloody7 Version 2022.1129
 
         /// <summary>
         /// Ready to read, relative to bloody7.exe main module base address
@@ -23,7 +23,7 @@
             Flag_RFSignalDetector = 0x0103EAC6, // Checked
             Flag_TransmissionBoost = 0x0103EAC7, // Checked
 
-            Signal = 0x00611068, // Checked
+            Signal = 0x00611068, // NotWorking
             Charging = 0x00103F3A0, // Checked
 
             Battery = 0x00E7B4F4, // Checked
@@ -36,7 +36,7 @@
         /// </summary>
         internal enum Offsets0
         {
-            Signal = 0x00000CD4, // Checked
+            Signal = 0x00000CD4, // NotWorking
             Charging = 0x0000043C, // Checked
 
             Battery = 0x0000859C, // Checked
