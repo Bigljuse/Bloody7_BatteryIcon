@@ -2,6 +2,7 @@
 using BatteryIcon.Pointers;
 using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 using Settings = BatteryIcon.Properties.Settings;
@@ -10,7 +11,11 @@ namespace BatteryIcon.MouseIcon.Manager
 {
     internal class NotificationIconManager
     {
+        [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = CharSet.Auto)]
+        extern static bool DestroyIcon(IntPtr handle);
+
         public NotifyIcon NotificationIcon = new();
+        public static IntPtr s_lastIconHandle = IntPtr.Zero;
 
         public NotificationIconManager()
         {
@@ -30,8 +35,6 @@ namespace BatteryIcon.MouseIcon.Manager
         public void UpdateIconInfo()
         {
             var newIcon = GetNewIcon();
-
-            NotificationIcon.Icon?.Dispose();
             NotificationIcon.Icon = newIcon;
 
             ushort mouseBattery = Mouse.Statuses.Battery;
@@ -49,12 +52,16 @@ namespace BatteryIcon.MouseIcon.Manager
 
         private Icon GetNewIcon()
         {
+            if(s_lastIconHandle != IntPtr.Zero)
+                DestroyIcon(s_lastIconHandle);
+
             Color batteryIconColor = Settings.Default.BatteryIconColor;
 
             BatteryDrawer batteryDrawer = new(Drawer.Enums.BatterySize.Bitmap_16x16);
             Bitmap bitmap = batteryDrawer.GetBitmap(Mouse.Statuses.BatteryPercent, batteryIconColor);
             IntPtr iconPointer = bitmap.GetHicon();
             Icon newIcon = Icon.FromHandle(iconPointer);
+            s_lastIconHandle = iconPointer;
 
             return newIcon;
         }
